@@ -1,0 +1,150 @@
+scraping:
+  reddit:
+    # Use PRAW (requires Reddit API credentials)
+    # Note: snscrape is deprecated and no longer supported
+    method: "praw"  # Only option: "praw"
+    subreddits:
+      - india
+      - bangalore
+      - chennai
+      - mumbai
+      - delhi
+      - hyderabad
+      - pune
+      - IndiaSpeaks
+      - indianews
+      - kolkata
+      - ahmedabad
+      - jaipur
+      - Indian_Academia
+      - IndiaInvestments
+    keywords:
+      - waste management
+      - flood
+      - traffic
+      - pollution
+      - policy
+      - infrastructure
+      - development
+      - public services
+      - water supply
+      - electricity
+      - healthcare
+      - education
+      - housing
+      - transportation
+      - sanitation
+      - air quality
+    max_posts: 3000  # Increased for more comprehensive data collection
+    delay_seconds: 2
+  
+  news:
+    sources:
+      - name: "The Hindu"
+        url: "https://www.thehindu.com"
+        rss_feeds:
+          - "https://www.thehindu.com/news/cities/bangalore/?service=rss"
+          - "https://www.thehindu.com/news/cities/chennai/?service=rss"
+          - "https://www.thehindu.com/news/cities/mumbai/?service=rss"
+          - "https://www.thehindu.com/news/cities/delhi/?service=rss"
+          - "https://www.thehindu.com/news/cities/hyderabad/?service=rss"
+      - name: "Times of India"
+        url: "https://timesofindia.indiatimes.com"
+        city_pages:
+          bangalore: "https://timesofindia.indiatimes.com/city/bengaluru"
+          chennai: "https://timesofindia.indiatimes.com/city/chennai"
+          mumbai: "https://timesofindia.indiatimes.com/city/mumbai"
+          delhi: "https://timesofindia.indiatimes.com/city/delhi"
+          hyderabad: "https://timesofindia.indiatimes.com/city/hyderabad"
+    max_articles: 500  # Increased for more comprehensive data collection
+    delay_seconds: 2  # Polite crawl delay (not used in async mode, but kept for compatibility)
+    max_concurrent: 5  # Maximum concurrent async requests (rate limiting)
+    # Domain allowlist (empty = allow all domains)
+    allowed_domains:
+      - "thehindu.com"
+      - "timesofindia.indiatimes.com"
+      - "indianexpress.com"
+      - "hindustantimes.com"
+
+nlp:
+  models:
+    embedding: "sentence-transformers/all-MiniLM-L6-v2"
+    ner: "en_core_web_sm"
+    sentiment: "distilbert-base-uncased-finetuned-sst-2-english"
+  # Sentiment analysis method: "vader" (fast, default) or "transformer" (more accurate, slower)
+  sentiment:
+    method: "vader"  # Options: "vader" or "transformer"
+  topic_modeling:
+    method: "bertopic"
+    num_topics: 10
+  entity_types:
+    - GPE
+    - LOC
+    - ORG
+    - PERSON
+    - LAW
+    - DATE
+    - EVENT
+
+index:
+  # Index type: "flat" (exact, <10K docs), "hnsw" (approx, 10K-100K), "ivf" (approx, >100K), or "auto" (auto-select)
+  type: "auto"
+  # Enable incremental updates (only process new documents)
+  incremental: true
+
+storage:
+  # Use FAISS for efficient vector search, SQL for structured data
+  vector_store: "faiss"  # Options: "faiss" or "chromadb"
+  sqlite_path: "data/city_news.db"
+  vector_db_path: "data/vector_db"
+  index_path: "index/sbert.cosine.faiss"
+  embeddings_path: "models/sbert_embeddings.npy"
+  corpus_path: "data/processed/corpus.parquet"
+  
+search:
+  max_results: 50
+  similarity_threshold: 0.7
+  
+cities:
+  - bangalore
+  - chennai
+  - mumbai
+  - delhi
+  - kolkata
+  - hyderabad
+  - pune
+  - ahmedabad
+  - jaipur
+  - lucknow
+  - Bengaluru
+  - Mumbai
+  - Delhi
+  - Chennai
+  - Hyderabad
+  - Pune
+  - Kolkata
+  - Ahmedabad
+  - Jaipur
+  - Surat
+
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+  file: "logs/city_news.log"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  docs_url: "/docs"
+
+ui:
+  streamlit_port: 8501
+
+# Feature flags
+features:
+  fast_mode: false  # Set to false to enable real scraping
+  enable_bertopic: true  # Enable BERTopic (slower but better)
+  enable_causal: true  # Enable causal analysis
+  enable_streamlit: true  # Enable Streamlit UI
+  enable_fastapi: true  # Enable FastAPI
+

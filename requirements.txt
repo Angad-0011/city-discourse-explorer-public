@@ -1,0 +1,68 @@
+# Web Scraping
+praw>=7.7.1
+trafilatura>=1.6.3  # Better text extraction than newspaper3k (which is abandoned)
+beautifulsoup4>=4.12.3
+requests>=2.31.0
+aiohttp>=3.9.0  # For async HTTP requests
+lxml>=5.1.0
+feedparser>=6.0.11
+# Note: snscrape is deprecated and no longer supported - use PRAW for Reddit scraping
+# Note: newspaper3k is abandoned - replaced with trafilatura
+
+# NLP and ML
+transformers>=4.38.1
+sentence-transformers>=2.3.1
+torch>=2.2.0
+spacy>=3.7.4
+nltk>=3.8.1
+gensim>=4.3.2
+scipy>=1.11.4
+bertopic>=0.16.0
+umap-learn>=0.5.6
+hdbscan>=0.8.36
+
+# Vector Database
+faiss-cpu>=1.8.0
+chromadb>=0.4.22
+
+# Causal Analysis
+dowhy>=0.11.1
+econml>=0.15.0
+networkx>=3.2.1
+pyvis>=0.3.2
+
+# Database
+sqlalchemy>=2.0.27
+psycopg2-binary>=2.9.9
+alembic>=1.13.1
+pyarrow>=16.1
+
+# API
+fastapi>=0.109.2
+uvicorn>=0.27.1
+pydantic>=2.6.1
+pydantic-settings>=2.1.0
+streamlit>=1.36.0
+
+# Utilities
+python-dotenv>=1.0.1
+pyyaml>=6.0.1
+pandas>=2.2.0
+numpy>=1.26.4
+scikit-learn>=1.4.0
+tqdm>=4.66.1
+loguru>=0.7.2
+joblib>=1.4.0
+
+# Testing
+pytest>=8.2.0
+pytest-asyncio>=0.23.5
+httpx>=0.26.0
+
+# Development
+black>=24.2.0
+flake8>=7.0.0
+mypy>=1.8.0
+ipython>=8.21.0
+jupyter>=1.0.0
+

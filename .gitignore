@@ -1,0 +1,114 @@
+
+# City Discourse Explorer - sensible defaults for a Python data/ML repo
+# See https://git-scm.com/docs/gitignore for details
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+*.egg-info/
+pip-wheel-metadata/
+*.egg
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+venv.bak/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Swap files and other temp files
+*.swp
+*.swo
+*~
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# Python tooling caches
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Logs and temp
+
+
+# Secrets and environment files
+.env
+.env.*
+secrets.*
+*.pem
+*.key
+*.p12
+
+# Config: ignore local/secret config variants but keep repo config files
+
+
+# Data: ignore raw/processed/generated data directories
+data/
+models/
+index/
+logs/
+*.parquet
+*.pdf
+*.jsonl
+
+
+# Index / vector store folders (ignore generated indexes)
+
+# Model artifacts and large binaries (by extension)
+*.npy
+*.npz
+*.faiss
+*.faiss.idx
+*.bin
+*.pkl
+*.pickle
+*.model
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Common machine-learning artifacts
+
+
+# Misc
+.ropeproject/
+__MACOSX/
+
+# If you add files to be ignored but they are already tracked, run:
+#   git rm --cached <file>
+# then commit. Tracked files are not affected by .gitignore.
+

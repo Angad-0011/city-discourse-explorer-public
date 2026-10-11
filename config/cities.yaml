@@ -1,0 +1,183 @@
+# Canonical city registry
+# This is the single source of truth for city names and variations
+
+cities:
+  - standard_name: "Mumbai"
+    variations:
+      - "mumbai"
+      - "bombay"
+      - "bombai"
+    aliases:
+      - "Bombay"
+    state: "Maharashtra"
+    country: "India"
+    
+  - standard_name: "Delhi"
+    variations:
+      - "delhi"
+      - "new delhi"
+      - "ncr"
+      - "nct"
+      - "delhi ncr"
+      - "national capital region"
+    aliases:
+      - "New Delhi"
+      - "NCR"
+      - "NCT"
+    state: "Delhi"
+    country: "India"
+    
+  - standard_name: "Bengaluru"
+    variations:
+      - "bengaluru"
+      - "bangalore"
+      - "blr"
+      - "bangaluru"
+    aliases:
+      - "Bangalore"
+      - "BLR"
+    state: "Karnataka"
+    country: "India"
+    
+  - standard_name: "Chennai"
+    variations:
+      - "chennai"
+      - "madras"
+      - "chenai"
+    aliases:
+      - "Madras"
+    state: "Tamil Nadu"
+    country: "India"
+    
+  - standard_name: "Hyderabad"
+    variations:
+      - "hyderabad"
+      - "hyderbad"
+      - "hyd"
+    aliases:
+      - "Hyd"
+    state: "Telangana"
+    country: "India"
+    
+  - standard_name: "Pune"
+    variations:
+      - "pune"
+      - "puna"
+    state: "Maharashtra"
+    country: "India"
+    
+  - standard_name: "Kolkata"
+    variations:
+      - "kolkata"
+      - "calcutta"
+      - "kolkatta"
+    aliases:
+      - "Calcutta"
+    state: "West Bengal"
+    country: "India"
+    
+  - standard_name: "Lucknow"
+    variations:
+      - "lucknow"
+      - "lko"
+    aliases:
+      - "LKO"
+    state: "Uttar Pradesh"
+    country: "India"
+    
+  - standard_name: "Jaipur"
+    variations:
+      - "jaipur"
+      - "pink city"
+    state: "Rajasthan"
+    country: "India"
+    
+  - standard_name: "Ahmedabad"
+    variations:
+      - "ahmedabad"
+      - "ahmedbad"
+      - "amd"
+    state: "Gujarat"
+    country: "India"
+    
+  - standard_name: "Surat"
+    variations:
+      - "surat"
+    state: "Gujarat"
+    country: "India"
+    
+  - standard_name: "Kanpur"
+    variations:
+      - "kanpur"
+      - "cawnpore"
+    aliases:
+      - "Cawnpore"
+    state: "Uttar Pradesh"
+    country: "India"
+    
+  - standard_name: "Nagpur"
+    variations:
+      - "nagpur"
+    state: "Maharashtra"
+    country: "India"
+    
+  - standard_name: "Indore"
+    variations:
+      - "indore"
+    state: "Madhya Pradesh"
+    country: "India"
+    
+  - standard_name: "Thane"
+    variations:
+      - "thane"
+    state: "Maharashtra"
+    country: "India"
+    
+  - standard_name: "Bhopal"
+    variations:
+      - "bhopal"
+    state: "Madhya Pradesh"
+    country: "India"
+    
+  - standard_name: "Visakhapatnam"
+    variations:
+      - "visakhapatnam"
+      - "vizag"
+      - "visakha"
+    aliases:
+      - "Vizag"
+    state: "Andhra Pradesh"
+    country: "India"
+    
+  - standard_name: "Patna"
+    variations:
+      - "patna"
+    state: "Bihar"
+    country: "India"
+    
+  - standard_name: "Vadodara"
+    variations:
+      - "vadodara"
+      - "baroda"
+    aliases:
+      - "Baroda"
+    state: "Gujarat"
+    country: "India"
+    
+  - standard_name: "Ghaziabad"
+    variations:
+      - "ghaziabad"
+    state: "Uttar Pradesh"
+    country: "India"
+
+# Generic terms to exclude from city detection
+exclude_terms:
+  - "india"
+  - "indian"
+  - "country"
+  - "state"
+  - "nation"
+  - "world"
+  - "asia"
+  - "continent"
+
