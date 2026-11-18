@@ -6,6 +6,14 @@ How does discussion of the same urban issue vary across cities? City Discourse E
 
 ## Example walkthrough
 
+Try the comparison offline from the repository root with Python 3; no packages, API keys, or downloads are needed:
+
+```bash
+python3 demo.py "public transit delays"
+```
+
+The command prints two fictional matches per city, grouped under Mumbai and Delhi. You can also try `python3 demo.py park` or enter your own query. This standalone preview ranks by keyword overlap; it does not run the full pipeline, semantic search, or Streamlit UI.
+
 With a corpus covering Mumbai and Delhi, open **Cross-City Comparison**, select both cities, and try a query like `public transit delays`. The app groups matching records by city and shows relevance scores, topic and sentiment labels, text previews, and links to the original sources when available. This is an example query, not a published result.
 
 Model labels can be wrong, and differences in results reflect the sources in your corpus—not necessarily what residents as a whole think. Treat causal graphs as exploratory, not as evidence of cause and effect.
