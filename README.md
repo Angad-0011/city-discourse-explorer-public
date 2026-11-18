@@ -1,8 +1,14 @@
 # City Discourse Explorer
 
-City Discourse Explorer is an NLP and retrieval pipeline for collecting, analyzing, and exploring city-specific public discourse across Reddit and news sources. It combines scraping, preprocessing, topic modeling, sentiment analysis, vector search, and lightweight interfaces for exploration.
+How does discussion of the same urban issue vary across cities? City Discourse Explorer is a Python research prototype that combines Reddit and news text in a searchable corpus. Its Streamlit interface lets you compare coverage by city, filter by topic and sentiment, and inspect the underlying sources.
 
 > **Source-only public snapshot.** This repository deliberately excludes scraped posts and articles, sample corpora of uncertain provenance, derived model and index artifacts, logs, and the PDF from the private project. It has a fresh Git history. Bring data that you are authorized to collect and use; no dataset or API credentials are distributed here.
+
+## Example walkthrough
+
+With a corpus covering Mumbai and Delhi, open **Cross-City Comparison**, select both cities, and try a query like `public transit delays`. The app groups matching records by city and shows relevance scores, topic and sentiment labels, text previews, and links to the original sources when available. This is an example query, not a published result.
+
+Model labels can be wrong, and differences in results reflect the sources in your corpus—not necessarily what residents as a whole think. Treat causal graphs as exploratory, not as evidence of cause and effect.
 
 ## What It Does
 
@@ -48,6 +54,7 @@ Or use the bundled target:
 
 ```bash
 make bootstrap
+source .venv/bin/activate
 ```
 
 ## Common Commands
